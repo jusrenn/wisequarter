@@ -20,3 +20,5 @@ print(metin[::2])
 print(metin[-2])
 
 print(len(metin)) # Degiskenin veya listenin uzunlugunu verir
+
+print(metin[::-1])
