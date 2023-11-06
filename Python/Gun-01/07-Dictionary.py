@@ -30,3 +30,7 @@ print("----------------------")
 print(insanlar["id2"]["yas"])
 print(myDictionary)
 
+
+with open("Python/Gun-01/metin.txt", "r") as dosya:
+    print(dosya.read())
+
