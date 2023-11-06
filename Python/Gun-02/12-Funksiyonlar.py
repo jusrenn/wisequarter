@@ -35,6 +35,7 @@ def birden_cok_sayi_topla(*sayilar):
 
 birden_cok_sayi_topla(10.6, 20, 30.1, 5)
 
+# Bu fonksiyon bool (boolean) deger dondurur
 def kontrol(degisken):
     return 'u' in degisken
 

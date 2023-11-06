@@ -1,5 +1,6 @@
 isimler = ["Yusuf", "Ahmet", "Mehmet", "Yunus"]
 
+# Bu fonksiyon bool (boolean) deger dondurur
 def kontrol(degisken):
     return 'u' in degisken
 
