@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20231109 19:02:58.687" rpa="false" schemaversion="4">
-<suite id="s1" name="Basliklar" source="/Users/yusuf.renkoglu/Desktop/WiseQuarter/RF/Basliklar.robot">
-<test id="s1-t1" name="Bu benim ilk testim" line="2">
+<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20231109 19:51:55.821" rpa="false" schemaversion="4">
+<suite id="s1" name="03-IF Else" source="/Users/yusuf.renkoglu/Desktop/WiseQuarter/RF/03-IF_Else.robot">
+<test id="s1-t1" name="Test 01" line="12">
+<if>
+<branch type="IF" condition="${sayi2} &gt; ${sayi1}">
 <kw name="Log To Console" library="BuiltIn">
-<arg>Bu benim ilk robot framework mesajim</arg>
+<arg>${sayi2}, ${sayi1}'den buyuktur</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231109 19:02:58.696" endtime="20231109 19:02:58.696"/>
+<status status="PASS" starttime="20231109 19:51:55.829" endtime="20231109 19:51:55.829"/>
 </kw>
-<status status="PASS" starttime="20231109 19:02:58.696" endtime="20231109 19:02:58.697"/>
+<status status="PASS" starttime="20231109 19:51:55.829" endtime="20231109 19:51:55.829"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${sayi1}, ${sayi2}'den buyuktur</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231109 19:51:55.829" endtime="20231109 19:51:55.829"/>
+</kw>
+<status status="NOT RUN" starttime="20231109 19:51:55.829" endtime="20231109 19:51:55.829"/>
+</branch>
+<status status="PASS" starttime="20231109 19:51:55.829" endtime="20231109 19:51:55.829"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;Bu&quot; in &quot;${cumle}&quot;">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Bu kelimesi mevcut</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231109 19:51:55.829" endtime="20231109 19:51:55.829"/>
+</kw>
+<status status="PASS" starttime="20231109 19:51:55.829" endtime="20231109 19:51:55.829"/>
+</branch>
+<status status="PASS" starttime="20231109 19:51:55.829" endtime="20231109 19:51:55.829"/>
+</if>
+<status status="PASS" starttime="20231109 19:51:55.829" endtime="20231109 19:51:55.829"/>
 </test>
-<status status="PASS" starttime="20231109 19:02:58.689" endtime="20231109 19:02:58.697"/>
+<status status="PASS" starttime="20231109 19:51:55.822" endtime="20231109 19:51:55.829"/>
 </suite>
 <statistics>
 <total>
@@ -18,7 +43,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Basliklar">Basliklar</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="03-IF Else">03-IF Else</stat>
 </suite>
 </statistics>
 <errors>
