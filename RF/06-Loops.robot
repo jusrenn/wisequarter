@@ -5,13 +5,15 @@
 *** Variables ***
 ${isim}=        Yusuf
 @{liste}=       Yusuf    Ahmet    Mehmet    Veli
-&{MyDict}=      name=Yusuf    yas=39    sehir=Helsinki
+&{MyDict}=      name=Yusuf
+...             yas=39
+...             sehir=Helsinki
 ${sayi1}=       0
 ${sayi2}=       20
 
 
 *** Test Cases ***
-Test01
+Test 01
     WHILE    ${sayi1} <= 10
         Log To Console    ${sayi1}
         ${sayi1}=    Evaluate    ${sayi1} + 1
