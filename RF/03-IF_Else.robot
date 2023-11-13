@@ -18,6 +18,13 @@ Test 01
 
     IF    "Bu" in "${cumle}"    Log To Console    "Bu" kelimesi mevcut
 
+    ${ornek}=    Set Variable    ORNEK
+    IF    "ORNEK" == "${ornek}"
+        Log To Console    ESITTIR
+    ELSE
+        Log To Console    ESIT DEGILDIR
+    END
+
 
 *** Keywords ***
 #
