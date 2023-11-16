@@ -1,40 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20231116 20:14:48.509" rpa="false" schemaversion="4">
-<suite id="s1" name="10-CustomLibKullanma" source="/Users/yusuf.renkoglu/Desktop/WiseQuarter/RF/10-CustomLibKullanma.robot">
-<test id="s1-t1" name="Test 01" line="15">
-<kw name="Sayilari Topla" library="customLib">
-<var>${sayilarinToplami}</var>
-<arg>40</arg>
-<arg>50</arg>
-<msg timestamp="20231116 20:14:48.517" level="INFO">${sayilarinToplami} = 90</msg>
-<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.517"/>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20231116 20:51:43.783" rpa="false" schemaversion="4">
+<suite id="s1" name="Test01" source="/Users/yusuf.renkoglu/Desktop/WiseQuarter/SeleniumTestler/tests/test01.robot">
+<test id="s1-t1" name="ilk testim" line="6">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.google.com.tr</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231116 20:51:43.851" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com.tr'.</msg>
+<status status="PASS" starttime="20231116 20:51:43.850" endtime="20231116 20:51:45.915"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231116 20:51:46.916" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20231116 20:51:45.915" endtime="20231116 20:51:46.918"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Accept all</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231116 20:51:46.920" level="INFO">Clicking button 'Accept all'.</msg>
+<status status="PASS" starttime="20231116 20:51:46.919" endtime="20231116 20:51:46.976"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>APjFqb</arg>
+<arg>Robot Framework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231116 20:51:46.977" level="INFO">Typing text 'Robot Framework' into text field 'APjFqb'.</msg>
+<status status="PASS" starttime="20231116 20:51:46.976" endtime="20231116 20:51:47.068"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>APjFqb</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231116 20:51:47.069" level="INFO">Sending key(s) ('ENTER',) to APjFqb element.</msg>
+<msg timestamp="20231116 20:51:47.346" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20231116 20:51:47.347" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20231116 20:51:47.068" endtime="20231116 20:51:48.325"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${sonucTexti}</var>
+<arg>id=result-stats</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231116 20:51:48.337" level="INFO">${sonucTexti} = About 80 300 000 results (0,25 seconds) </msg>
+<status status="PASS" starttime="20231116 20:51:48.325" endtime="20231116 20:51:48.337"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${sayilarinToplami}</arg>
+<arg>${sonucTexti}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.517"/>
+<status status="PASS" starttime="20231116 20:51:48.337" endtime="20231116 20:51:48.338"/>
 </kw>
-<kw name="Yusufun keywordu" library="customLib">
-<arg>22</arg>
-<arg>33</arg>
-<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.517"/>
-</kw>
-<kw name="Ekrana merhaba de" library="reusableKeywords">
-<kw name="Log To Console" library="BuiltIn">
-<arg>Merhaba</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.517"/>
-</kw>
-<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.517"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${uyelikBtn}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231116 20:14:48.518" endtime="20231116 20:14:48.518"/>
-</kw>
-<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.518"/>
+<status status="PASS" starttime="20231116 20:51:43.849" endtime="20231116 20:51:48.338"/>
 </test>
-<status status="PASS" starttime="20231116 20:14:48.510" endtime="20231116 20:14:48.518"/>
+<status status="PASS" starttime="20231116 20:51:43.785" endtime="20231116 20:51:48.339"/>
 </suite>
 <statistics>
 <total>
@@ -43,7 +60,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="10-CustomLibKullanma">10-CustomLibKullanma</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test01">Test01</stat>
 </suite>
 </statistics>
 <errors>
