@@ -1,0 +1,2 @@
+*** Variables ***
+${uyelikBtn}=       xpath locate

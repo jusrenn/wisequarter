@@ -1,179 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20231113 21:08:14.392" rpa="false" schemaversion="4">
-<suite id="s1" name="08-Keywords" source="/Users/yusuf.renkoglu/Desktop/WiseQuarter/RF/08-Keywords.robot">
-<kw name="Testi chrome Browseri Ile Baslat" type="SETUP" sourcename="Testi ${browser} Browseri Ile Baslat">
-<doc>Bu keyword konsoldan parametre ile
-Browser adi ile testi ayaga kaldirir
-Args chrome= browser adi</doc>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${browser}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231113 21:08:14.401" endtime="20231113 21:08:14.401"/>
-</kw>
-<status status="PASS" starttime="20231113 21:08:14.401" endtime="20231113 21:08:14.401"/>
-</kw>
-<test id="s1-t1" name="Test 01" line="20">
-<kw name="Set Variable" library="BuiltIn">
-<var>${sayi}</var>
-<arg>100</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20231113 21:08:14.401" level="INFO">${sayi} = 100</msg>
-<status status="PASS" starttime="20231113 21:08:14.401" endtime="20231113 21:08:14.401"/>
-</kw>
-<kw name="Create List" library="BuiltIn">
-<var>@{listem}</var>
-<arg>2</arg>
-<arg>4</arg>
-<arg>6</arg>
-<arg>8</arg>
-<arg>10</arg>
-<arg>${sayi}</arg>
-<arg>a</arg>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20231113 21:08:14.401" level="INFO">@{listem} = [ 2 | 4 | 6 | 8 | 10 | 100 | a ]</msg>
-<status status="PASS" starttime="20231113 21:08:14.401" endtime="20231113 21:08:14.402"/>
-</kw>
-<kw name="Sayilari Ikiye Bol">
-<arg>${listem}</arg>
-<doc>Bu keyword gelen sayilari 2'ye boler</doc>
-<for flavor="IN">
-<var>${e}</var>
-<value>@{liste}</value>
-<iter>
-<var name="${e}">2</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sonuc}</var>
-<arg>${e} / 2</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231113 21:08:14.402" level="INFO">${sonuc} = 1.0</msg>
-<status status="PASS" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.402"/>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20231116 20:14:48.509" rpa="false" schemaversion="4">
+<suite id="s1" name="10-CustomLibKullanma" source="/Users/yusuf.renkoglu/Desktop/WiseQuarter/RF/10-CustomLibKullanma.robot">
+<test id="s1-t1" name="Test 01" line="15">
+<kw name="Sayilari Topla" library="customLib">
+<var>${sayilarinToplami}</var>
+<arg>40</arg>
+<arg>50</arg>
+<msg timestamp="20231116 20:14:48.517" level="INFO">${sayilarinToplami} = 90</msg>
+<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.517"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${sonuc}</arg>
+<arg>${sayilarinToplami}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.402"/>
+<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.517"/>
 </kw>
-<status status="PASS" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.402"/>
-</iter>
-<iter>
-<var name="${e}">4</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sonuc}</var>
-<arg>${e} / 2</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231113 21:08:14.402" level="INFO">${sonuc} = 2.0</msg>
-<status status="PASS" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.402"/>
+<kw name="Yusufun keywordu" library="customLib">
+<arg>22</arg>
+<arg>33</arg>
+<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.517"/>
+</kw>
+<kw name="Ekrana merhaba de" library="reusableKeywords">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Merhaba</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.517"/>
+</kw>
+<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.517"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${sonuc}</arg>
+<arg>${uyelikBtn}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.402"/>
+<status status="PASS" starttime="20231116 20:14:48.518" endtime="20231116 20:14:48.518"/>
 </kw>
-<status status="PASS" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.402"/>
-</iter>
-<iter>
-<var name="${e}">6</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sonuc}</var>
-<arg>${e} / 2</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231113 21:08:14.402" level="INFO">${sonuc} = 3.0</msg>
-<status status="PASS" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.402"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${sonuc}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.402"/>
-</kw>
-<status status="PASS" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.402"/>
-</iter>
-<iter>
-<var name="${e}">8</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sonuc}</var>
-<arg>${e} / 2</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231113 21:08:14.402" level="INFO">${sonuc} = 4.0</msg>
-<status status="PASS" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.402"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${sonuc}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231113 21:08:14.403" endtime="20231113 21:08:14.403"/>
-</kw>
-<status status="PASS" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.403"/>
-</iter>
-<iter>
-<var name="${e}">10</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sonuc}</var>
-<arg>${e} / 2</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231113 21:08:14.403" level="INFO">${sonuc} = 5.0</msg>
-<status status="PASS" starttime="20231113 21:08:14.403" endtime="20231113 21:08:14.403"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${sonuc}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231113 21:08:14.403" endtime="20231113 21:08:14.403"/>
-</kw>
-<status status="PASS" starttime="20231113 21:08:14.403" endtime="20231113 21:08:14.403"/>
-</iter>
-<iter>
-<var name="${e}">100</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sonuc}</var>
-<arg>${e} / 2</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231113 21:08:14.403" level="INFO">${sonuc} = 50.0</msg>
-<status status="PASS" starttime="20231113 21:08:14.403" endtime="20231113 21:08:14.403"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${sonuc}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231113 21:08:14.403" endtime="20231113 21:08:14.403"/>
-</kw>
-<status status="PASS" starttime="20231113 21:08:14.403" endtime="20231113 21:08:14.403"/>
-</iter>
-<iter>
-<var name="${e}">a</var>
-<kw name="Evaluate" library="BuiltIn">
-<var>${sonuc}</var>
-<arg>${e} / 2</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20231113 21:08:14.404" level="FAIL">Evaluating expression 'a / 2' failed: NameError: name 'a' is not defined nor importable as module</msg>
-<status status="FAIL" starttime="20231113 21:08:14.403" endtime="20231113 21:08:14.404"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${sonuc}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20231113 21:08:14.404" endtime="20231113 21:08:14.404"/>
-</kw>
-<status status="FAIL" starttime="20231113 21:08:14.403" endtime="20231113 21:08:14.404"/>
-</iter>
-<status status="FAIL" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.404"/>
-</for>
-<status status="FAIL" starttime="20231113 21:08:14.402" endtime="20231113 21:08:14.404"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${cokYeniDegisken}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20231113 21:08:14.404" endtime="20231113 21:08:14.404"/>
-</kw>
-<doc>Bu test deneme amacli olusturulmustur</doc>
-<status status="FAIL" starttime="20231113 21:08:14.401" endtime="20231113 21:08:14.404">Evaluating expression 'a / 2' failed: NameError: name 'a' is not defined nor importable as module</status>
+<status status="PASS" starttime="20231116 20:14:48.517" endtime="20231116 20:14:48.518"/>
 </test>
-<doc>Bu suite ile ABC numarali user storynin ozellikleri test edilir</doc>
-<status status="FAIL" starttime="20231113 21:08:14.393" endtime="20231113 21:08:14.404"/>
+<status status="PASS" starttime="20231116 20:14:48.510" endtime="20231116 20:14:48.518"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="08-Keywords">08-Keywords</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="10-CustomLibKullanma">10-CustomLibKullanma</stat>
 </suite>
 </statistics>
 <errors>
