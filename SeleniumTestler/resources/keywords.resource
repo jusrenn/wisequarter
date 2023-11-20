@@ -12,10 +12,12 @@ Anasayfaya ${BROWSER} Ile Git
         ${BROWSER}=    Set Variable    chrome
     END
     Open Browser    https://demowebshop.tricentis.com    ${BROWSER}
+    Maximize Browser Window
 
 Anasayfaya Git
     [Arguments]    ${BROWSER}=chrome
     Open Browser    https://demowebshop.tricentis.com    ${BROWSER}
+    Maximize Browser Window
 
 Yeni Uyelik Olustur
     [Arguments]    ${user}
