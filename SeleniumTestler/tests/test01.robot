@@ -12,3 +12,6 @@ ilk testim
     ${sonucTexti}=    Get Text    id=result-stats
     # About 80 300 000 results (0,27 seconds)
     Log To Console    ${sonucTexti}
+
+*** Keywords ***
+

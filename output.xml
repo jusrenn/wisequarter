@@ -1,66 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20231116 20:51:43.783" rpa="false" schemaversion="4">
-<suite id="s1" name="Test01" source="/Users/yusuf.renkoglu/Desktop/WiseQuarter/SeleniumTestler/tests/test01.robot">
-<test id="s1-t1" name="ilk testim" line="6">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.google.com.tr</arg>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20231120 20:02:36.869" rpa="false" schemaversion="4">
+<suite id="s1" name="US001" source="/Users/yusuf.renkoglu/Desktop/WiseQuarter/SeleniumTestler/tests/US001.robot">
+<test id="s1-t1" name="Test 001" line="10">
+<kw name="Anasayfaya firefox Ile Git" library="keywords" sourcename="Anasayfaya ${BROWSER} Ile Git">
+<kw name="Create List" library="BuiltIn">
+<var>@{BROWSER_LIST}</var>
 <arg>chrome</arg>
+<arg>firefox</arg>
+<arg>safari</arg>
+<arg>opera</arg>
+<arg>edge</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231120 20:02:36.932" level="INFO">@{BROWSER_LIST} = [ chrome | firefox | safari | opera | edge ]</msg>
+<status status="PASS" starttime="20231120 20:02:36.932" endtime="20231120 20:02:36.933"/>
+</kw>
+<if>
+<branch type="IF" condition="not &quot;${BROWSER}&quot; in @{BROWSER_LIST}">
+<kw name="Set Variable" library="BuiltIn">
+<var>${BROWSER}</var>
+<arg>chrome</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20231120 20:02:36.933" endtime="20231120 20:02:36.933"/>
+</kw>
+<status status="NOT RUN" starttime="20231120 20:02:36.933" endtime="20231120 20:02:36.933"/>
+</branch>
+<status status="PASS" starttime="20231120 20:02:36.933" endtime="20231120 20:02:36.934"/>
+</if>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demowebshop.tricentis.com</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231116 20:51:43.851" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com.tr'.</msg>
-<status status="PASS" starttime="20231116 20:51:43.850" endtime="20231116 20:51:45.915"/>
+<msg timestamp="20231120 20:02:36.934" level="INFO">Opening browser 'firefox' to base url 'https://demowebshop.tricentis.com'.</msg>
+<status status="PASS" starttime="20231120 20:02:36.934" endtime="20231120 20:02:40.939"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231116 20:51:46.916" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20231116 20:51:45.915" endtime="20231116 20:51:46.918"/>
+<status status="PASS" starttime="20231120 20:02:36.931" endtime="20231120 20:02:40.939"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>Accept all</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20231116 20:51:46.920" level="INFO">Clicking button 'Accept all'.</msg>
-<status status="PASS" starttime="20231116 20:51:46.919" endtime="20231116 20:51:46.976"/>
+<kw name="Yeni Uyelik Olustur" library="keywords">
+<arg>${USER}</arg>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=${REGISTER}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231120 20:02:40.942" level="INFO">Clicking link 'xpath=//a[contains(.,'Register')]'.</msg>
+<status status="PASS" starttime="20231120 20:02:40.941" endtime="20231120 20:02:41.225"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>Gender</arg>
+<arg>${user}[gender]</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20231120 20:02:41.225" level="INFO">Selecting 'M' from radio button 'Gender'.</msg>
+<status status="PASS" starttime="20231120 20:02:41.225" endtime="20231120 20:02:41.446"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>APjFqb</arg>
-<arg>Robot Framework</arg>
+<arg>id=FirstName</arg>
+<arg>${user}[name]</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231116 20:51:46.977" level="INFO">Typing text 'Robot Framework' into text field 'APjFqb'.</msg>
-<status status="PASS" starttime="20231116 20:51:46.976" endtime="20231116 20:51:47.068"/>
+<msg timestamp="20231120 20:02:41.447" level="INFO">Typing text 'Yusuf' into text field 'id=FirstName'.</msg>
+<status status="PASS" starttime="20231120 20:02:41.447" endtime="20231120 20:02:41.468"/>
 </kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>APjFqb</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20231116 20:51:47.069" level="INFO">Sending key(s) ('ENTER',) to APjFqb element.</msg>
-<msg timestamp="20231116 20:51:47.346" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20231116 20:51:47.347" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20231116 20:51:47.068" endtime="20231116 20:51:48.325"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=LastName</arg>
+<arg>${user}[lastname]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231120 20:02:41.469" level="INFO">Typing text 'Ren' into text field 'id=LastName'.</msg>
+<status status="PASS" starttime="20231120 20:02:41.468" endtime="20231120 20:02:41.480"/>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${sonucTexti}</var>
-<arg>id=result-stats</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231116 20:51:48.337" level="INFO">${sonucTexti} = About 80 300 000 results (0,25 seconds) </msg>
-<status status="PASS" starttime="20231116 20:51:48.325" endtime="20231116 20:51:48.337"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=Email</arg>
+<arg>${user}[email]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231120 20:02:41.481" level="INFO">Typing text 'yusuf@wisequarter.com' into text field 'id=Email'.</msg>
+<status status="PASS" starttime="20231120 20:02:41.481" endtime="20231120 20:02:41.494"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${sonucTexti}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231116 20:51:48.337" endtime="20231116 20:51:48.338"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=Password</arg>
+<arg>${user}[password]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231120 20:02:41.494" level="FAIL">Dictionary '${user}' has no key 'password'.</msg>
+<status status="FAIL" starttime="20231120 20:02:41.494" endtime="20231120 20:02:41.495"/>
 </kw>
-<status status="PASS" starttime="20231116 20:51:43.849" endtime="20231116 20:51:48.338"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=ConfirmPassword</arg>
+<arg>${user}[password]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231120 20:02:41.495" endtime="20231120 20:02:41.495"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=register-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231120 20:02:41.495" endtime="20231120 20:02:41.495"/>
+</kw>
+<status status="FAIL" starttime="20231120 20:02:40.940" endtime="20231120 20:02:41.495"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231120 20:02:41.496" endtime="20231120 20:02:41.496"/>
+</kw>
+<status status="FAIL" starttime="20231120 20:02:36.931" endtime="20231120 20:02:41.496">Dictionary '${user}' has no key 'password'.</status>
 </test>
-<status status="PASS" starttime="20231116 20:51:43.785" endtime="20231116 20:51:48.339"/>
+<status status="FAIL" starttime="20231120 20:02:36.871" endtime="20231120 20:02:41.497"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test01">Test01</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="US001">US001</stat>
 </suite>
 </statistics>
 <errors>
