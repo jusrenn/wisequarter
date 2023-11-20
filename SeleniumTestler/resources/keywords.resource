@@ -3,6 +3,7 @@ Library         SeleniumLibrary
 Library         Collections
 Library         FakerLibrary
 Variables       Locators.py
+Resource        ../../RF/07-Keywords.robot
 
 
 *** Keywords ***
@@ -60,4 +61,3 @@ Yeni Uyelik Olustur
     Click Button    xpath=//input[@value="Continue"]
 
     Set Global Variable    ${user}
-    Sleep    600

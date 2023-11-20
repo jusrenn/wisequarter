@@ -7,7 +7,9 @@ Resource    ../resources/keywords.resource
 
 
 *** Test Cases ***
-Test 001
+Siteye Uye Olma Testi
+    [Documentation]    Siteye uye olunup olunmadigini test eder
+    [Tags]    registeration
     Anasayfaya ${BROWSER} Ile Git
     # Yeni Uyelik Olustur    ${USER}
     Yeni Uyelik Olustur
