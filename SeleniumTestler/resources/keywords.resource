@@ -47,6 +47,7 @@ Yeni Uyelik Olustur
     END
 
     Click Link    xpath=${REGISTER}
+    Wait Until Page Contains    Your Personal Details    timeout=60
     Select Radio Button    Gender    ${user}[gender]
     Input Text    id=FirstName    ${user}[name]
     Input Text    id=LastName    ${user}[lastname]
@@ -54,6 +55,9 @@ Yeni Uyelik Olustur
     Input Text    id=Password    ${user}[password]
     Input Text    id=ConfirmPassword    ${user}[password]
     Click Button    id=register-button
-    Page Should Contain    Your registration completed
+    Wait Until Page Contains    Your registration completed    timeout=60
     Page Should Contain    ${user}[email]
     Click Button    xpath=//input[@value="Continue"]
+
+    Set Global Variable    ${user}
+    Sleep    600

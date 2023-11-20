@@ -8,7 +8,6 @@ Resource    ../resources/keywords.resource
 
 *** Test Cases ***
 Test 001
-    Anasayfaya firefox Ile Git
+    Anasayfaya ${BROWSER} Ile Git
     # Yeni Uyelik Olustur    ${USER}
     Yeni Uyelik Olustur
-    Sleep    5
