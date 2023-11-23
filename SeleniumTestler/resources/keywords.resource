@@ -3,7 +3,6 @@ Library         SeleniumLibrary
 Library         Collections
 Library         FakerLibrary
 Variables       Locators.py
-Resource        ../../RF/07-Keywords.robot
 
 
 *** Keywords ***
