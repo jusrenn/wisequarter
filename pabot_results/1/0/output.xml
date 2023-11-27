@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.4 on darwin)" generated="20231127 20:35:54.273" rpa="false" schemaversion="4">
+<suite id="s1" name="US001" source="/Users/yusuf.renkoglu/Desktop/WiseQuarter/SeleniumTestler/tests/US001.robot">
+<test id="s1-t1" name="Yeni Bir Kullanici Ile Sepete Urun Ekleme" line="25">
+<kw name="Anasayfaya ${BROWSER} Ile Git" library="keywords" sourcename="Anasayfaya ${BROWSER} Ile Git">
+<doc>Parametre olarak gonderilen browser ile anasayfaya gider
+Parametre gonderilmez ise default olarak chrome calisir</doc>
+<kw name="Create List" library="BuiltIn">
+<var>@{BROWSER_LIST}</var>
+<arg>chrome</arg>
+<arg>firefox</arg>
+<arg>safari</arg>
+<arg>opera</arg>
+<arg>edge</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231127 20:35:54.536" level="INFO">@{BROWSER_LIST} = [ chrome | firefox | safari | opera | edge ]</msg>
+<status status="PASS" starttime="20231127 20:35:54.536" endtime="20231127 20:35:54.536"/>
+</kw>
+<if>
+<branch type="IF" condition="not &quot;${BROWSER}&quot; in @{BROWSER_LIST}">
+<kw name="Set Variable" library="BuiltIn">
+<var>${BROWSER}</var>
+<arg>chrome</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20231127 20:35:54.536" endtime="20231127 20:35:54.536"/>
+</kw>
+<status status="NOT RUN" starttime="20231127 20:35:54.536" endtime="20231127 20:35:54.536"/>
+</branch>
+<status status="PASS" starttime="20231127 20:35:54.536" endtime="20231127 20:35:54.536"/>
+</if>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://demowebshop.tricentis.com</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231127 20:35:54.536" level="INFO">Opening browser 'chrome' to base url 'https://demowebshop.tricentis.com'.</msg>
+<status status="PASS" starttime="20231127 20:35:54.536" endtime="20231127 20:35:56.548"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231127 20:35:56.548" endtime="20231127 20:35:56.972"/>
+</kw>
+<status status="PASS" starttime="20231127 20:35:54.535" endtime="20231127 20:35:56.973"/>
+</kw>
+<kw name="Kategorileri Kontrol Et">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{actual_menu_items}</var>
+<arg>xpath=(//ul[@class="list"])[1]//a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231127 20:35:56.982" level="INFO">@{actual_menu_items} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="3b2b5307f76d30f322f1e10297f6b868", element="6865E2D15BB090E1F5A5D4DF0929EE6C_element_18")&gt; | &lt;selenium.webdriver.remote.webelement.WebEleme...</msg>
+<status status="PASS" starttime="20231127 20:35:56.973" endtime="20231127 20:35:56.982"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${actual_menu_items}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231127 20:35:56.982" level="INFO">${actual_menu_items} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="3b2b5307f76d30f322f1e10297f6b868", element="6865E2D15BB090E1F5A5D4DF0929EE6C_element_18")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement...</msg>
+<status status="PASS" starttime="20231127 20:35:56.982" endtime="20231127 20:35:56.983"/>
+</kw>
+<for flavor="IN ENUMERATE">
+<var>${i}</var>
+<var>${element}</var>
+<value>@{actual_menu_items}</value>
+<iter>
+<var name="${i}">0</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3b2b5307f76d30f322f1e10297f6b868", element="6865E2D15BB090E1F5A5D4DF0929EE6C_element_18")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:56.991" level="INFO">${text} = Books</msg>
+<status status="PASS" starttime="20231127 20:35:56.983" endtime="20231127 20:35:56.991"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${expected_menu_items}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231127 20:35:56.991" endtime="20231127 20:35:56.991"/>
+</kw>
+<status status="PASS" starttime="20231127 20:35:56.983" endtime="20231127 20:35:56.991"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3b2b5307f76d30f322f1e10297f6b868", element="6865E2D15BB090E1F5A5D4DF0929EE6C_element_19")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:56.996" level="INFO">${text} = Computers</msg>
+<status status="PASS" starttime="20231127 20:35:56.992" endtime="20231127 20:35:56.996"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${expected_menu_items}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231127 20:35:56.996" endtime="20231127 20:35:56.996"/>
+</kw>
+<status status="PASS" starttime="20231127 20:35:56.992" endtime="20231127 20:35:56.996"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3b2b5307f76d30f322f1e10297f6b868", element="6865E2D15BB090E1F5A5D4DF0929EE6C_element_20")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.001" level="INFO">${text} = Electronics</msg>
+<status status="PASS" starttime="20231127 20:35:56.997" endtime="20231127 20:35:57.001"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${expected_menu_items}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231127 20:35:57.001" endtime="20231127 20:35:57.001"/>
+</kw>
+<status status="PASS" starttime="20231127 20:35:56.996" endtime="20231127 20:35:57.001"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3b2b5307f76d30f322f1e10297f6b868", element="6865E2D15BB090E1F5A5D4DF0929EE6C_element_21")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.005" level="INFO">${text} = Apparel &amp; Shoes</msg>
+<status status="PASS" starttime="20231127 20:35:57.001" endtime="20231127 20:35:57.005"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${expected_menu_items}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231127 20:35:57.005" endtime="20231127 20:35:57.006"/>
+</kw>
+<status status="PASS" starttime="20231127 20:35:57.001" endtime="20231127 20:35:57.006"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3b2b5307f76d30f322f1e10297f6b868", element="6865E2D15BB090E1F5A5D4DF0929EE6C_element_22")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.010" level="INFO">${text} = Digital downloads</msg>
+<status status="PASS" starttime="20231127 20:35:57.006" endtime="20231127 20:35:57.010"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${expected_menu_items}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231127 20:35:57.010" endtime="20231127 20:35:57.010"/>
+</kw>
+<status status="PASS" starttime="20231127 20:35:57.006" endtime="20231127 20:35:57.010"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3b2b5307f76d30f322f1e10297f6b868", element="6865E2D15BB090E1F5A5D4DF0929EE6C_element_23")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.014" level="INFO">${text} = Jewelry</msg>
+<status status="PASS" starttime="20231127 20:35:57.010" endtime="20231127 20:35:57.014"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${expected_menu_items}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231127 20:35:57.014" endtime="20231127 20:35:57.014"/>
+</kw>
+<status status="PASS" starttime="20231127 20:35:57.010" endtime="20231127 20:35:57.014"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3b2b5307f76d30f322f1e10297f6b868", element="6865E2D15BB090E1F5A5D4DF0929EE6C_element_24")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.018" level="INFO">${text} = Gift Cards</msg>
+<status status="PASS" starttime="20231127 20:35:57.015" endtime="20231127 20:35:57.018"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${expected_menu_items}[${i}]</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231127 20:35:57.018" endtime="20231127 20:35:57.018"/>
+</kw>
+<status status="PASS" starttime="20231127 20:35:57.014" endtime="20231127 20:35:57.018"/>
+</iter>
+<status status="PASS" starttime="20231127 20:35:56.983" endtime="20231127 20:35:57.018"/>
+</for>
+<status status="PASS" starttime="20231127 20:35:56.973" endtime="20231127 20:35:57.018"/>
+</kw>
+<kw name="Yeni Uyelik Olustur" library="keywords">
+<doc>Yeni bir uyelik olusturmaya yarar.
+Parametre olarak Dictionary gondermek gerekir</doc>
+<if>
+<branch type="IF" condition="&quot;${user}&quot; == &quot;faker&quot;">
+<kw name="Passport Gender" library="FakerLibrary">
+<var>${gender}</var>
+<doc>Generates a string representing the gender displayed on a passport</doc>
+<msg timestamp="20231127 20:35:57.019" level="INFO">${gender} = F</msg>
+<status status="PASS" starttime="20231127 20:35:57.019" endtime="20231127 20:35:57.019"/>
+</kw>
+<kw name="Name" library="FakerLibrary">
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<msg timestamp="20231127 20:35:57.019" level="INFO">${name} = Melissa Davis</msg>
+<status status="PASS" starttime="20231127 20:35:57.019" endtime="20231127 20:35:57.019"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${lastname}</var>
+<msg timestamp="20231127 20:35:57.020" level="INFO">${lastname} = Bishop</msg>
+<status status="PASS" starttime="20231127 20:35:57.020" endtime="20231127 20:35:57.020"/>
+</kw>
+<kw name="Email" library="FakerLibrary">
+<var>${email}</var>
+<msg timestamp="20231127 20:35:57.020" level="INFO">${email} = jdunn@example.org</msg>
+<status status="PASS" starttime="20231127 20:35:57.020" endtime="20231127 20:35:57.020"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${password}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20231127 20:35:57.021" level="INFO">${password} = +fcjLOwWy0</msg>
+<status status="PASS" starttime="20231127 20:35:57.020" endtime="20231127 20:35:57.021"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{user}</var>
+<arg>gender=${gender}</arg>
+<arg>name=${name}</arg>
+<arg>lastname=${lastname}</arg>
+<arg>email=${email}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231127 20:35:57.021" level="INFO">&amp;{user} = { gender=F | name=Melissa Davis | lastname=Bishop | email=jdunn@example.org | password=+fcjLOwWy0 }</msg>
+<status status="PASS" starttime="20231127 20:35:57.021" endtime="20231127 20:35:57.021"/>
+</kw>
+<status status="PASS" starttime="20231127 20:35:57.019" endtime="20231127 20:35:57.021"/>
+</branch>
+<status status="PASS" starttime="20231127 20:35:57.019" endtime="20231127 20:35:57.021"/>
+</if>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>xpath=${REGISTER}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.021" level="INFO">Clicking link 'xpath=//a[contains(.,'Register')]'.</msg>
+<status status="PASS" starttime="20231127 20:35:57.021" endtime="20231127 20:35:57.274"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Your Personal Details</arg>
+<arg>timeout=60</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231127 20:35:57.275" endtime="20231127 20:35:57.282"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>Gender</arg>
+<arg>${user}[gender]</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20231127 20:35:57.283" level="INFO">Selecting 'F' from radio button 'Gender'.</msg>
+<status status="PASS" starttime="20231127 20:35:57.282" endtime="20231127 20:35:57.311"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=FirstName</arg>
+<arg>${user}[name]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.312" level="INFO">Typing text 'Melissa Davis' into text field 'id=FirstName'.</msg>
+<status status="PASS" starttime="20231127 20:35:57.312" endtime="20231127 20:35:57.395"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=LastName</arg>
+<arg>${user}[lastname]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.395" level="INFO">Typing text 'Bishop' into text field 'id=LastName'.</msg>
+<status status="PASS" starttime="20231127 20:35:57.395" endtime="20231127 20:35:57.435"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=Email</arg>
+<arg>${user}[email]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.436" level="INFO">Typing text 'jdunn@example.org' into text field 'id=Email'.</msg>
+<status status="PASS" starttime="20231127 20:35:57.435" endtime="20231127 20:35:57.467"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=Password</arg>
+<arg>${user}[password]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.467" level="INFO">Typing text '+fcjLOwWy0' into text field 'id=Password'.</msg>
+<status status="PASS" starttime="20231127 20:35:57.467" endtime="20231127 20:35:57.512"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=ConfirmPassword</arg>
+<arg>${user}[password]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.513" level="INFO">Typing text '+fcjLOwWy0' into text field 'id=ConfirmPassword'.</msg>
+<status status="PASS" starttime="20231127 20:35:57.512" endtime="20231127 20:35:57.544"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=register-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:57.544" level="INFO">Clicking button 'id=register-button'.</msg>
+<status status="PASS" starttime="20231127 20:35:57.544" endtime="20231127 20:35:58.160"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Your registration completed</arg>
+<arg>timeout=60</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231127 20:35:58.160" endtime="20231127 20:35:58.168"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${user}[email]</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231127 20:35:58.176" level="INFO">Current page contains text 'jdunn@example.org'.</msg>
+<status status="PASS" starttime="20231127 20:35:58.168" endtime="20231127 20:35:58.176"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=//input[@value="Continue"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:58.176" level="INFO">Clicking button 'xpath=//input[@value="Continue"]'.</msg>
+<status status="PASS" starttime="20231127 20:35:58.176" endtime="20231127 20:35:58.461"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${user}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20231127 20:35:58.461" level="INFO">${user} = {'gender': 'F', 'name': 'Melissa Davis', 'lastname': 'Bishop', 'email': 'jdunn@example.org', 'password': '+fcjLOwWy0'}</msg>
+<status status="PASS" starttime="20231127 20:35:58.461" endtime="20231127 20:35:58.461"/>
+</kw>
+<status status="PASS" starttime="20231127 20:35:57.018" endtime="20231127 20:35:58.462"/>
+</kw>
+<kw name="Rastgele Kategoriye Git">
+<kw name="Get Length" library="BuiltIn">
+<var>${liste_uzunlugu}</var>
+<arg>${actual_menu_items}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20231127 20:35:58.462" level="INFO">Length is 7</msg>
+<msg timestamp="20231127 20:35:58.462" level="INFO">${liste_uzunlugu} = 7</msg>
+<status status="PASS" starttime="20231127 20:35:58.462" endtime="20231127 20:35:58.462"/>
+</kw>
+<kw name="Rastgele Sayi" library="rastgeleSayi">
+<var>${sayi}</var>
+<arg>0</arg>
+<arg>${liste_uzunlugu}</arg>
+<msg timestamp="20231127 20:35:58.463" level="INFO">${sayi} = 6</msg>
+<status status="PASS" starttime="20231127 20:35:58.463" endtime="20231127 20:35:58.463"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${actual_menu_items}[${sayi}]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231127 20:35:58.463" level="INFO">Clicking link '&lt;selenium.webdriver.remote.webelement.WebElement (session="3b2b5307f76d30f322f1e10297f6b868", element="6865E2D15BB090E1F5A5D4DF0929EE6C_element_24")&gt;'.</msg>
+<msg timestamp="20231127 20:35:58.661" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231127 20:35:58.661" level="FAIL">StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=119.0.6045.159)
+Stacktrace:
+0   chromedriver                        0x000000010518a004 chromedriver + 4169732
+1   chromedriver                        0x0000000105181ff8 chromedriver + 4136952
+2   chromedriver                        0x0000000104dd7500 chromedriver + 292096
+3   chromedriver                        0x0000000104de5b74 chromedriver + 351092
+4   chromedriver                        0x0000000104ddd1f8 chromedriver + 315896
+5   chromedriver                        0x0000000104ddb9dc chromedriver + 309724
+6   chromedriver                        0x0000000104dde780 chromedriver + 321408
+7   chromedriver                        0x0000000104dde8ac chromedriver + 321708
+8   chromedriver                        0x0000000104e1e6e8 chromedriver + 583400
+9   chromedriver                        0x0000000104e123b4 chromedriver + 533428
+10  chromedriver                        0x0000000104e11db4 chromedriver + 531892
+11  chromedriver                        0x0000000104e57818 chromedriver + 817176
+12  chromedriver                        0x0000000104e105e8 chromedriver + 525800
+13  chromedriver                        0x0000000104e114b8 chromedriver + 529592
+14  chromedriver                        0x0000000105150334 chromedriver + 3932980
+15  chromedriver                        0x0000000105154970 chromedriver + 3950960
+16  chromedriver                        0x0000000105138774 chromedriver + 3835764
+17  chromedriver                        0x0000000105155478 chromedriver + 3953784
+18  chromedriver                        0x000000010512aab4 chromedriver + 3779252
+19  chromedriver                        0x0000000105171914 chromedriver + 4069652
+20  chromedriver                        0x0000000105171a90 chromedriver + 4070032
+21  chromedriver                        0x0000000105181c70 chromedriver + 4136048
+22  libsystem_pthread.dylib             0x00000001901c1034 _pthread_start + 136
+23  libsystem_pthread.dylib             0x00000001901bbe3c thread_start + 8
+</msg>
+<status status="FAIL" starttime="20231127 20:35:58.463" endtime="20231127 20:35:58.662"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{alt_kategori}</var>
+<arg>xpath=//h2[@class="title"]/a</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" starttime="20231127 20:35:58.662" endtime="20231127 20:35:58.662"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${liste_uzunlugu}</var>
+<arg>${alt_kategori}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" starttime="20231127 20:35:58.662" endtime="20231127 20:35:58.662"/>
+</kw>
+<if>
+<branch type="IF" condition="${liste_uzunlugu} != 0">
+<kw name="Rastgele Sayi" library="rastgeleSayi">
+<var>${sayi}</var>
+<arg>0</arg>
+<arg>${liste_uzunlugu}</arg>
+<status status="NOT RUN" starttime="20231127 20:35:58.662" endtime="20231127 20:35:58.663"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${alt_kategori}[${sayi}]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231127 20:35:58.663" endtime="20231127 20:35:58.663"/>
+</kw>
+<status status="NOT RUN" starttime="20231127 20:35:58.662" endtime="20231127 20:35:58.663"/>
+</branch>
+<status status="NOT RUN" starttime="20231127 20:35:58.662" endtime="20231127 20:35:58.663"/>
+</if>
+<status status="FAIL" starttime="20231127 20:35:58.462" endtime="20231127 20:35:58.663"/>
+</kw>
+<kw name="Rastgele Urun Sec Ve Urun Detay Sayfasina Git">
+<status status="NOT RUN" starttime="20231127 20:35:58.663" endtime="20231127 20:35:58.663"/>
+</kw>
+<kw name="Urunu Sepete Ekle">
+<status status="NOT RUN" starttime="20231127 20:35:58.663" endtime="20231127 20:35:58.663"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231127 20:35:58.663" endtime="20231127 20:35:58.663"/>
+</kw>
+<kw name="Sepete Git Ve Urunu Kontrol Et">
+<status status="NOT RUN" starttime="20231127 20:35:58.663" endtime="20231127 20:35:58.663"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20231127 20:35:58.663" endtime="20231127 20:35:58.663"/>
+</kw>
+<doc>Yeni bir kullanici olusturup rastgele bir kategoriden
+Rastgele bir urunu secip, sepete ekler ve urun adi ve fiyatinin dogrulamasini gerceklestirir.</doc>
+<tag>e2e</tag>
+<status status="FAIL" starttime="20231127 20:35:54.535" endtime="20231127 20:35:58.664">StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=119.0.6045.159)
+Stacktrace:
+0   chromedriver                        0x000000010518a004 chromedriver + 4169732
+1   chromedriver                        0x0000000105181ff8 chromedriver + 4136952
+2   chromedriver                        0x0000000104dd7500 chromedriver + 292096
+3   chromedriver                        0x0000000104de5b74 chromedriver + 351092
+4   chromedriver                        0x0000000104ddd1f8 chromedriver + 315896
+5   chromedriver                        0x0000000104ddb9dc chromedriver + 309724
+6   chromedriver                        0x0000000104dde780 chromedriver + 321408
+7   chromedriver                        0x0000000104dde8ac chromedriver + 321708
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x0000000104e114b8 chromedriver + 529592
+14  chromedriver                        0x0000000105150334 chromedriver + 3932980
+15  chromedriver                        0x0000000105154970 chromedriver + 3950960
+16  chromedriver                        0x0000000105138774 chromedriver + 3835764
+17  chromedriver                        0x0000000105155478 chromedriver + 3953784
+18  chromedriver                        0x000000010512aab4 chromedriver + 3779252
+19  chromedriver                        0x0000000105171914 chromedriver + 4069652
+20  chromedriver                        0x0000000105171a90 chromedriver + 4070032
+21  chromedriver                        0x0000000105181c70 chromedriver + 4136048
+22  libsystem_pthread.dylib             0x00000001901c1034 _pthread_start + 136
+23  libsystem_pthread.dylib             0x00000001901bbe3c thread_start + 8</status>
+</test>
+<test id="s1-t2" name="XXX Testi" line="41">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Merhaba</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231127 20:35:58.664" endtime="20231127 20:35:58.664"/>
+</kw>
+<doc>Burasi testin dokumani</doc>
+<tag>mrb</tag>
+<status status="PASS" starttime="20231127 20:35:58.664" endtime="20231127 20:35:58.664"/>
+</test>
+<status status="FAIL" starttime="20231127 20:35:54.277" endtime="20231127 20:35:58.665"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">e2e</stat>
+<stat pass="1" fail="0" skip="0">mrb</stat>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="US001">US001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

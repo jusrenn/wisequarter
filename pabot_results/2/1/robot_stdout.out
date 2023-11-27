@@ -1,0 +1,26 @@
+==============================================================================
+US001                                                                         
+==============================================================================
+Yeni Bir Kullanici Ile Sepete Urun Ekleme :: Yeni bir kullanici ol...   
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/yusuf.renkoglu/Desktop/WiseQuarter/SeleniumTestler/tests/US001.robot:25
+    T:  Yeni Bir Kullanici Ile Sepete Urun Ekleme    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/yusuf.renkoglu/Desktop/WiseQuarter/SeleniumTestler/tests/US001.robot:29
+      Anasayfaya ${BROWSER} Ile Git    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/yusuf.renkoglu/Desktop/WiseQuarter/SeleniumTestler/resources/keywords.resource:19
+      Open Browser    https://demowebshop.tricentis.com    ${BROWSER}
+      |  ${BROWSER} = safari (str)
+______________________________________________________________________________
+| FAIL |
+TypeError: __init__() got an unexpected keyword argument 'log_path'
+------------------------------------------------------------------------------
+XXX Testi :: Burasi testin dokumani                                   Merhaba
+| PASS |
+------------------------------------------------------------------------------
+US001                                                                 | FAIL |
+2 tests, 1 passed, 1 failed
+==============================================================================
+Output:  /Users/yusuf.renkoglu/Desktop/WiseQuarter/pabot_results/2/1/output.xml

@@ -1,0 +1,48 @@
+==============================================================================
+US001                                                                         
+==============================================================================
+Yeni Bir Kullanici Ile Sepete Urun Ekleme :: Yeni bir kullanici ol...   
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/yusuf.renkoglu/Desktop/WiseQuarter/SeleniumTestler/tests/US001.robot:25
+    T:  Yeni Bir Kullanici Ile Sepete Urun Ekleme    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/yusuf.renkoglu/Desktop/WiseQuarter/SeleniumTestler/tests/US001.robot:34
+      Rastgele Kategoriye Git    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  /Users/yusuf.renkoglu/Desktop/WiseQuarter/SeleniumTestler/tests/US001.robot:67
+      Click Link    ${actual_menu_items}[${sayi}]
+      |  ${actual_menu_items}[${sayi}] = <selenium.webdriver.remote.webelement.WebElement (session="3b2b5307f76d30f322f1e10297f6b868", element="6865E2D15BB090E1F5A5D4DF0929EE6C_element_24")> (WebElement)
+______________________________________________________________________________
+| FAIL |
+StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=119.0.6045.159)
+Stacktrace:
+0   chromedriver                        0x000000010518a004 chromedriver + 4169732
+1   chromedriver                        0x0000000105181ff8 chromedriver + 4136952
+2   chromedriver                        0x0000000104dd7500 chromedriver + 292096
+3   chromedriver                        0x0000000104de5b74 chromedriver + 351092
+4   chromedriver                        0x0000000104ddd1f8 chromedriver + 315896
+5   chromedriver                        0x0000000104ddb9dc chromedriver + 309724
+6   chromedriver                        0x0000000104dde780 chromedriver + 321408
+7   chromedriver                        0x0000000104dde8ac chromedriver + 321708
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x0000000104e114b8 chromedriver + 529592
+14  chromedriver                        0x0000000105150334 chromedriver + 3932980
+15  chromedriver                        0x0000000105154970 chromedriver + 3950960
+16  chromedriver                        0x0000000105138774 chromedriver + 3835764
+17  chromedriver                        0x0000000105155478 chromedriver + 3953784
+18  chromedriver                        0x000000010512aab4 chromedriver + 3779252
+19  chromedriver                        0x0000000105171914 chromedriver + 4069652
+20  chromedriver                        0x0000000105171a90 chromedriver + 4070032
+21  chromedriver                        0x0000000105181c70 chromedriver + 4136048
+22  libsystem_pthread.dylib             0x00000001901c1034 _pthread_start + 136
+23  libsystem_pthread.dylib             0x00000001901bbe3c thread_start + 8
+------------------------------------------------------------------------------
+XXX Testi :: Burasi testin dokumani                                   Merhaba
+| PASS |
+------------------------------------------------------------------------------
+US001                                                                 | FAIL |
+2 tests, 1 passed, 1 failed
+==============================================================================
+Output:  /Users/yusuf.renkoglu/Desktop/WiseQuarter/pabot_results/1/0/output.xml

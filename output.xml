@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.4 on darwin)" generated="20231127 20:39:43.828" rpa="false" schemaversion="4">
+<suite id="s1" name="US001" source="/Users/yusuf.renkoglu/Desktop/WiseQuarter/SeleniumTestler/tests/US001.robot">
+<test id="s1-t1" name="Safari testi" line="47">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://www.google.com</arg>
+<arg>safari</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231127 20:39:44.039" level="INFO">Opening browser 'safari' to base url 'https://www.google.com'.</msg>
+<msg timestamp="20231127 20:39:44.039" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20231127 20:39:44.039" level="FAIL">TypeError: __init__() got an unexpected keyword argument 'log_path'</msg>
+<status status="FAIL" starttime="20231127 20:39:44.039" endtime="20231127 20:39:44.040"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231127 20:39:44.040" endtime="20231127 20:39:44.040"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20231127 20:39:44.040" endtime="20231127 20:39:44.040"/>
+</kw>
+<tag>safari</tag>
+<status status="FAIL" starttime="20231127 20:39:44.039" endtime="20231127 20:39:44.040">TypeError: __init__() got an unexpected keyword argument 'log_path'</status>
+</test>
+<status status="FAIL" starttime="20231127 20:39:43.829" endtime="20231127 20:39:44.040"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">safari</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="US001">US001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
