@@ -5,7 +5,7 @@ Library     SeleniumLibrary
 *** Test Cases ***
 ilk testim
     [Tags]    ysf
-    Open Browser    https://www.google.com.tr    chrome
+    Open Browser    https://www.google.com.tr    ${BROWSER}
     Sleep    1
     Click Button    Accept all
     Input Text    APjFqb    Robot Framework
