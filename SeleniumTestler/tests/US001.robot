@@ -27,6 +27,7 @@ Test 01
     Anasayfaya ${BROWSER} Ile Git
     # Yeni Uyelik Olustur    ${USER}
     Yeni Uyelik Olustur
+
     @{actual_menu_items}=    Get WebElements    xpath=(//ul[@class="list"])[1]//a
 
     FOR    ${i}    ${element}    IN ENUMERATE    @{actual_menu_items}
