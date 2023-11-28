@@ -40,6 +40,11 @@ Yeni Bir Kullanici Ile Sepete Urun Ekleme
     Sepete Git Ve Urunu Kontrol Et
     Close Browser
 
+Ikinci test
+    [Documentation]    Burasi aciklama
+    [Tags]    ikincitest
+    Log To Console    Merhaba
+
 
 *** Keywords ***
 Kategorileri Kontrol Et
