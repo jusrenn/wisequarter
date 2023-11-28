@@ -29,9 +29,9 @@ Yeni Bir Kullanici Ile Sepete Urun Ekleme
     ...    Rastgele bir urunu secip, sepete ekler ve urun adi ve fiyatinin dogrulamasini gerceklestirir.
     [Tags]    e2e
     Anasayfaya ${BROWSER} Ile Git
-    Kategorileri Kontrol Et
     # Yeni Uyelik Olustur    ${USER}
     Yeni Uyelik Olustur
+    Kategorileri Kontrol Et
     # Lists Should Be Equal    ${yeni_liste}    ${expected_menu_items}
     Rastgele Kategoriye Git
     Rastgele Urun Sec Ve Urun Detay Sayfasina Git
@@ -39,12 +39,6 @@ Yeni Bir Kullanici Ile Sepete Urun Ekleme
     Sleep    2
     Sepete Git Ve Urunu Kontrol Et
     Close Browser
-
-XXX Testi
-    [Documentation]    Burasi testin dokumani
-    [Tags]    mrb
-    Log To Console    Merhaba
-    # ${SLM}=    Execute Javascript    return document.querySelector("CSS SELCTOR").shadowRoot.querySelector("CSS SELECTOR").textContent
 
 
 *** Keywords ***
